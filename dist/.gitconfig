@@ -1,0 +1,11 @@
+[user]
+	email = herok.davidj@gmail.com
+	name = thedavidhk
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
