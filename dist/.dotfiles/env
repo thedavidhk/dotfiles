@@ -1,5 +1,8 @@
 # If GNU source-highlight is installed use syntax highlighting in less
-if [ -f "/usr/bin/src-hilite-lesspipe.sh" ]; then
+if [ -f /usr/bin/src-hilite-lesspipe.sh ]; then
   export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
-  export LESS=' -R'
+  export LESS=' -R '
+elif [ -f /usr/share/source-highlight/src-hilite-lesspipe.sh ]; then
+  export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+  export LESS=' -R '
 fi
