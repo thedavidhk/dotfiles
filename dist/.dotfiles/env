@@ -6,3 +6,7 @@ elif [ -f /usr/share/source-highlight/src-hilite-lesspipe.sh ]; then
   export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
   export LESS=' -R '
 fi
+
+# Make neovim the default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
