@@ -8,5 +8,7 @@ elif [ -f /usr/share/source-highlight/src-hilite-lesspipe.sh ]; then
 fi
 
 # Make neovim the default editor
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
+export PAGER="nvim -R"
+export MANPAGER="nvim -c 'set ft=man' -"

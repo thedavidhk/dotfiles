@@ -1,3 +1,4 @@
 alias ls='ls --color=auto'
 alias vim='nvim'
+alias tree='tree -C'
 
