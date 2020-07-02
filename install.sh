@@ -4,15 +4,15 @@ DEST="$HOME"
 SOURCE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # Link dotfiles
-for DOTFILE in $SOURCE/dist/.{bash_profile,bashrc,inputrc,dotfiles,tmuxrc,vim}; do
-    ln -fsv $DOTFILE $DEST
+for DOTFILE in {bash_profile,bashrc,inputrc,tmuxrc}; do
+    ln -fsv $SOURCE/$DOTFILE $DEST/.$DOTFILE
 done
 
-if [ $1 != "nogit" ]; then
+if [[ $1 != "nogit" ]]; then
     # Setup .gitconfig
     read -p "Name for gitconfig: " username
     read -p "Email for gitconfig: " email
-    cp $SOURCE/dist/.gitconfig $DEST/
+    cp $SOURCE/gitconfig $DEST/.gitconfig
     sed -i "s/<name>/$username/g" $DEST/.gitconfig
     sed -i "s/<email>/$email/g" $DEST/.gitconfig
 fi
@@ -22,8 +22,9 @@ nvim_config="${DEST}/.config/nvim/init.vim"
 echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after" > "$nvim_config"
 echo "let &packpath = &runtimepath" >> "$nvim_config"
 echo "source ~/.vim/vimrc" >> "$nvim_config"
+ln -fsv $SOURCE/vim $DEST/.vim
 
-# Install vim plugins
-#$SOURCE/install_vim_plugins.sh
+# Link components to .dotfiles directory
+ln -fsv $SOURCE/components $DEST/.dotfiles
 
 source $DEST/.bashrc
