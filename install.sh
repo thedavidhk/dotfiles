@@ -22,9 +22,17 @@ nvim_config="${DEST}/.config/nvim/init.vim"
 echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after" > "$nvim_config"
 echo "let &packpath = &runtimepath" >> "$nvim_config"
 echo "source ~/.vim/vimrc" >> "$nvim_config"
-ln -fsv $SOURCE/vim $DEST/.vim
+if [[ -e $DEST/.vim ]]; then
+    echo "$DEST/.vim already exists. Deleting..."
+    rm $DEST/.vim
+fi
+ln -sv $SOURCE/vim $DEST/.vim
 
 # Link components to .dotfiles directory
-ln -fsv $SOURCE/components $DEST/.dotfiles
+if [[ -e $DEST/.dotfiles ]]; then
+    echo "$DEST/.dotfiles already exists. Deleting..."
+    rm $DEST/.dotfiles
+fi
+ln -sv $SOURCE/components $DEST/.dotfiles
 
 source $DEST/.bashrc
