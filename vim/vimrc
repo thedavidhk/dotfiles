@@ -1,0 +1,95 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Global options
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable 24 bit colors
+set termguicolors
+
+" Show line numbers
+set number
+
+" Wrap text at # characters
+set textwidth=80
+
+" Ask to save changes on exit
+set confirm
+
+" Ignore case unless search contains at least one capital letter
+set smartcase
+
+" Tab completion menu in command line
+set wildmenu
+set wildignorecase
+
+" Show matching bracket on typing
+set showmatch
+
+" Indentation
+set smartindent
+
+" New window position
+set splitright
+set splitbelow
+
+" Whitespace
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Add System C and C++ Tags
+set tags+=~/.vim/systags
+
+" Set fallback omnifunction
+if has("autocmd") && exists("+omnifunc")
+autocmd Filetype *
+	    \	if &omnifunc == "" |
+	    \		setlocal omnifunc=syntaxcomplete#Complete |
+	    \	endif
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Commands
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Generate tags for the current project
+command! MakeTags !ctags -R
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Key bindings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Escape in normal mode gets rid of highlights
+nnoremap <silent> <ESC> :nohlsearch<CR>
+
+" Window navigation
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+
+""""""""""""""""""""""""""""""""""""""""
+" Insert mode completion
+""""""""""""""""""""""""""""""""""""""""
+
+" Lines
+inoremap <C-L> <C-X><C-L>
+
+" Keywords in current file
+inoremap <C-K> <C-X><C-K>
+
+" Keywords in current and included files
+inoremap <C-I> <C-X><C-I>
+
+" Keywords in dictionary
+inoremap <C-K> <C-X><C-K>
+
+" File names
+inoremap <C-F> <C-X><C-F>
+
+" Tags
+inoremap <C-]> <C-X><C-]>
+
+" Omnicompletion
+inoremap <C-O> <C-X><C-O>
+
+" Allow per project configuration
+set exrc
