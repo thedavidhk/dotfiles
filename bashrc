@@ -7,7 +7,7 @@
 
 PS1='[\u@\h \W]\$ '
 
-for component in .dotfiles/{Functions,Path,Alias,Conda,Env}; do
+for component in $HOME/.dotfiles/{Functions,Path,Alias,Conda,Env}; do
     if [ -f $component ]; then
         . $component
     else

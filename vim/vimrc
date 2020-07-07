@@ -66,6 +66,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
+" Fuzzy file search
+nnoremap <C-F> :e **/*
+
 """"""""""""""""""""""""""""""""""""""""
 " Insert mode completion
 """"""""""""""""""""""""""""""""""""""""
@@ -77,7 +80,8 @@ inoremap <C-L> <C-X><C-L>
 inoremap <C-K> <C-X><C-K>
 
 " Keywords in current and included files
-inoremap <C-I> <C-X><C-I>
+" inoremap <C-I> <C-X><C-I>
+" This remaps the tab key. Therefore leave it out
 
 " Keywords in dictionary
 inoremap <C-K> <C-X><C-K>

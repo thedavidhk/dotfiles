@@ -1,0 +1,9 @@
+[submodule "vim/pack/plugins/start/vim-pandoc"]
+	path = vim/pack/plugins/start/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc
+[submodule "vim/pack/plugins/start/vim-pandoc-syntax"]
+	path = vim/pack/plugins/start/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax
+[submodule "vim/pack/plugins/start/vim-rmarkdown"]
+	path = vim/pack/plugins/start/vim-rmarkdown
+	url = https://github.com/vim-pandoc/vim-rmarkdown

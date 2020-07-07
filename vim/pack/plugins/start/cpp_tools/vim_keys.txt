@@ -1,0 +1,15 @@
+
+
+
+i  <C-F>       * <C-X><C-F>
+	Last set from ~/dotfiles/vim/vimrc line 86
+i  <Tab>       * <C-X><Tab>
+	Last set from ~/dotfiles/vim/vimrc line 80
+i  <C-K>       * <C-X><C-K>
+	Last set from ~/dotfiles/vim/vimrc line 83
+i  <C-L>       * <C-X><C-L>
+	Last set from ~/dotfiles/vim/vimrc line 74
+i  <C-O>       * <C-X><C-O>
+	Last set from ~/dotfiles/vim/vimrc line 92
+i  <C-]>       * <C-X><C-]>
+	Last set from ~/dotfiles/vim/vimrc line 89
